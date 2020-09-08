@@ -21,7 +21,7 @@
 
     <div class="form-group">
         <label>Password</label>
-        {{ form.password(_class="form-control")}}
+        {{ form.password(class="form-control", placeholder="Password")}}
         {% if form.errors.password %}
         <div class="alert alert-danger" role="alert">
             <ul>
@@ -38,7 +38,7 @@
             {{ form.remember_me}} Remember
         </label>
     </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign  in</button>
 </form>
 </div>
 {% endblock %} 

@@ -30,16 +30,16 @@
                href="#">Home</a></li>
             <li class="nav-item">
               <a class="nav-link" href="#">About</a></li>
-            {% if current_user.is_authenticated %}  
+            {% if current_user.is_autheticated %}  
               <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('logout')}}">Logout</a></li> 
             {% else %} 
               <li class="nav-item"> 
                 <a class="nav-link" href="{{ url_for('login')}}">Login</a></li>
-          {% endif%}
+            {% endif%}
           </ul>
         </nav>
-        <h3 class="text-muted">The Toilter</h3>
+        <h3 class="text-muted">SavAd</h3>
        </div> 
 
         {% with messages = get_flashed_messages() %}
