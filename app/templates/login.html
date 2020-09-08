@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="nav justify-content-center">Login</h2>
+<div class="nav justify-content-center">
+<form action="" method="POST">
+    {{ form.csrf_token }}
+    <div class="form-group">
+        <label>Username</label>
+        {{ form.username(class="form-control", placeholder="Username")}}
+        {% if form.errors.username %}
+        <div class="alert alert-danger" role="alert">
+            <ul>
+            {% for e in form.errors.username %}
+                <li>{{ e }}</li>
+            {% endfor %}
+            </ul>
+         </div>
+        {% endif %}
+    </div>
+
+    <div class="form-group">
+        <label>Password</label>
+        {{ form.password(_class="form-control")}}
+        {% if form.errors.password %}
+        <div class="alert alert-danger" role="alert">
+            <ul>
+            {% for e in form.errors.password %}
+                <li>{{ e }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+ 
+    <div class="checkbox">
+        <label>
+            {{ form.remember_me}} Remember
+        </label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</div>
+{% endblock %} 
